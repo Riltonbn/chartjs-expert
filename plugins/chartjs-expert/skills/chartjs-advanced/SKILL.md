@@ -435,6 +435,6 @@ options: {
 
 ## Additional Resources
 
-- See `examples/gradient-backgrounds.md` for gradient pattern library
-- See `examples/custom-chart-type.md` for complete custom controller example
+- See `examples/gradient-backgrounds.html` for gradient pattern library
+- See `examples/custom-chart-type.html` for complete custom controller example
 - See `references/controller-api.md` for chart controller API documentation
