@@ -4,44 +4,44 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Claude Code plugin providing Chart.js v4.5.1 expertise. The plugin includes skills (knowledge), commands (user-invocable actions), and an agent (autonomous helper) organized in a marketplace structure.
+This is a Claude Code plugin marketplace providing Chart.js v4.5.1 expertise. The marketplace contains one plugin (`chartjs-expert`) with 10 skills, 1 command, and 1 agent.
 
 ## Repository Structure
 
 ```
-plugins/
+.claude-plugin/
+└── marketplace.json              # Marketplace manifest (points to plugins/)
+
+plugins/chartjs-expert/
 ├── .claude-plugin/plugin.json    # Plugin manifest
 ├── agents/chartjs-expert.md      # Proactive agent for Chart.js work
 ├── commands/component.md         # /chartjs:component command
 └── skills/                       # 10 specialized knowledge skills
-    ├── chartjs-overview/         # Installation, setup, instance methods
-    ├── chartjs-chart-types/      # Line, bar, pie, radar, etc.
-    ├── chartjs-configuration/    # Options, legends, tooltips, responsiveness
-    ├── chartjs-axes/             # Scales, time series, styling
-    ├── chartjs-plugins/          # Custom plugin development
-    ├── chartjs-developers/       # Custom charts, scales, API
-    ├── chartjs-integrations/     # React, Vue, Angular, Rails 8
-    ├── chartjs-animations/       # Animation configuration
-    ├── chartjs-tooltips/         # Tooltip customization
-    └── chartjs-advanced/         # Gradients, advanced techniques
+    └── chartjs-*/                # Each skill directory contains:
+        ├── SKILL.md              # Core knowledge (required)
+        ├── references/           # Deep-dive documentation (optional)
+        └── examples/             # Working code examples (optional)
 ```
 
-`.claude-plugin/marketplace.json` defines the marketplace that hosts this plugin.
+Skill domains: overview, chart-types, configuration, axes, plugins, developers, integrations, animations, tooltips, advanced.
 
 ## Linting Commands
 
 ```bash
-# Markdown (plugin content)
+# Markdown
 markdownlint '**/*.md'
 
 # HTML (example files)
 npx htmlhint 'plugins/**/examples/*.html'
 
-# YAML (workflows, config)
-yamllint -c .yamllint.yml .github/ .claude-plugin/ plugins/*/.claude-plugin/
+# YAML
+yamllint -c .yamllint.yml .github/ .claude-plugin/ 'plugins/*/.claude-plugin/'
 
-# Broken links (markdown files)
+# Broken links
 lychee --cache '**/*.md'
+
+# GitHub Actions
+actionlint
 ```
 
 ## Plugin Component Rules
@@ -52,11 +52,14 @@ When editing plugin components, follow these conventions:
 
 - YAML frontmatter requires `name` and `description`
 - `description` must start with "This skill should be used when..." and include trigger phrases
-- Body contains core knowledge, not exhaustive docs
+- Body contains core knowledge, not exhaustive documentation
+- Use `references/` subdirectory for deep-dive documentation on specific topics
+- Use `examples/` subdirectory for working code samples (`.html` or `.md`)
 
 ### Commands (`commands/*.md`)
 
 - YAML frontmatter requires `name`, `description`, `allowed-tools`
+- Optional: `argument-hint` for showing expected arguments
 - `description` must be 60 characters or fewer
 - Use imperative voice in body ("Do X" not "You should X")
 - `allowed-tools` should be minimal and appropriate for the command's purpose
@@ -66,6 +69,7 @@ When editing plugin components, follow these conventions:
 - YAML frontmatter requires `name`, `description`, `model`, `color`, `tools`
 - `description` must include 2-4 `<example>` blocks with Context, user/assistant dialogue, and `<commentary>`
 - `model: inherit` uses the parent model
+- `tools` is a comma-separated list (e.g., `Read, Write, Edit, Grep, Glob, Bash`)
 
 ## CI Workflows
 

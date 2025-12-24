@@ -1,7 +1,7 @@
 name: HTML Lint
 
 # Validates HTML example files using HTMLHint
-# Config: .htmlhintrc (Bootstrap-friendly rules)
+# Config: .htmlhintrc (Chart.js example-friendly rules)
 # Triggers on HTML file changes or config changes
 
 on:

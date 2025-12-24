@@ -4,53 +4,57 @@ body:
   - type: markdown
     attributes:
       value: |
-        Share what you've built! We'd love to hear about your projects and learnings.
+        Share what you've accomplished! This could be:
+        - **Charts you built** with help from this plugin
+        - **Contributions** you made to the plugin
+        - **Learnings** from using Chart.js or this plugin
 
-        **Tip**: Screenshots, GIFs, or short videos help others understand your work. You can drag and drop media directly into text fields.
+        **Tip**: Screenshots and code snippets help others learn from your work.
 
   - type: checkboxes
     id: checklist
     attributes:
       label: Pre-submission checklist
       options:
-        - label: I've checked that my showcase doesn't expose sensitive information
+        - label: My showcase doesn't expose sensitive information
           required: true
 
   - type: dropdown
-    id: component-type
+    id: showcase-type
     attributes:
-      label: Showcase Category
-      description: "Select what you're showcasing"
+      label: What are you showcasing?
+      description: "Select the type of showcase"
       options:
-        - Complete plugin
-        - Skill
-        - Agent
-        - Hook
-        - Command
-        - MCP integration
-        - Marketplace
+        - Chart.js visualization I built
+        - Dashboard or multi-chart project
+        - Plugin contribution (skill, command, etc.)
+        - Learning or technique discovery
         - Other
     validations:
       required: true
 
   - type: dropdown
-    id: difficulty
+    id: framework
     attributes:
-      label: Difficulty Level
-      description: "How would you rate the complexity of this project?"
+      label: Framework (if applicable)
+      description: "What did you build with?"
       options:
-        - Simple (single component, basic functionality)
-        - Moderate (multiple components, some integrations)
-        - Complex (advanced integrations, novel patterns)
+        - Not applicable
+        - Vanilla JavaScript
+        - React
+        - Vue
+        - Angular
+        - Rails / Stimulus
+        - Next.js
+        - Other
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: showcase
     attributes:
-      label: What are you sharing?
-      description: "Describe what you built or accomplished"
-      placeholder: "I built a plugin that..."
+      label: What You're Sharing
+      description: "Describe what you built or learned"
     validations:
       required: true
 
@@ -58,8 +62,10 @@ body:
     id: learnings
     attributes:
       label: Key Learnings
-      description: "What did you learn that might help others? This is the heart of Show and Tell!"
-      placeholder: "The most useful thing I learned was... A tip for others would be..."
+      description: "What insights might help others?"
+      placeholder: |
+        The plugin helped me realize...
+        A tip for others: ...
     validations:
       required: true
 
@@ -67,8 +73,7 @@ body:
     id: links
     attributes:
       label: Links or Resources
-      description: "Any relevant links to your project, blog post, or resources"
-      placeholder: "GitHub repo: ... Blog post: ..."
+      description: "Repository, demo, or relevant links"
     validations:
       required: false
 
@@ -77,7 +82,7 @@ body:
     attributes:
       label: Sharing preferences
       options:
-        - label: I'm okay with this being featured in project documentation
+        - label: This can be featured in project documentation
           required: false
-        - label: I'm okay with code snippets being shared as examples
+        - label: Code snippets can be shared as examples
           required: false

@@ -1,12 +1,12 @@
 name: Documentation Improvement
-description: Suggest improvements to documentation (README, CLAUDE.md, or plugin docs)
+description: Suggest improvements to documentation
 title: "[Docs]: "
 labels: ["documentation"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for helping improve our documentation! Clear documentation helps everyone use the plugin more effectively.
+        Thanks for helping improve our documentation! Clear docs help everyone use the plugin effectively.
 
   - type: dropdown
     id: doc-type
@@ -15,13 +15,20 @@ body:
       options:
         - README.md
         - CLAUDE.md
+        - CONTRIBUTING.md
         - CHANGELOG.md
-        - Command documentation (/chartjs-expert:component)
-        - Skill documentation (bootstrap-*)
-        - Agent documentation (chartjs-expert)
-        - Code of Conduct
-        - Contributing guidelines
-        - LICENSE
+        - Skill - chartjs-overview
+        - Skill - chartjs-chart-types
+        - Skill - chartjs-configuration
+        - Skill - chartjs-axes
+        - Skill - chartjs-plugins
+        - Skill - chartjs-developers
+        - Skill - chartjs-integrations
+        - Skill - chartjs-animations
+        - Skill - chartjs-tooltips
+        - Skill - chartjs-advanced
+        - Command - /chartjs:component
+        - Agent - chartjs-expert
         - Other
     validations:
       required: true
@@ -31,7 +38,7 @@ body:
     attributes:
       label: Specific Location
       description: File path or section name
-      placeholder: "e.g., README.md - Installation section, plugins/chartjs-expert/skills/bootstrap-layout/SKILL.md"
+      placeholder: "e.g., README.md - Installation section"
 
   - type: textarea
     id: issue
@@ -47,7 +54,6 @@ body:
     attributes:
       label: Suggested Improvement
       description: How would you improve it? (Feel free to include proposed wording)
-      placeholder: It would be clearer if...
 
   - type: checkboxes
     id: issue-type
@@ -58,14 +64,13 @@ body:
         - label: Missing information
         - label: Unclear explanation
         - label: Code example needed
+        - label: Outdated Chart.js API usage
         - label: Broken link
-        - label: Missing link (should link somewhere but doesn't)
         - label: Typo or grammar
-        - label: Outdated content
         - label: Other
 
   - type: textarea
     id: context
     attributes:
       label: Additional Context
-      description: Add any other context, screenshots, or relevant information
+      description: Screenshots, links to Chart.js docs, or other relevant information

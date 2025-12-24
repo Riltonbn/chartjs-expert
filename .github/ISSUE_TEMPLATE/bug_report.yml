@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to report a bug! Please fill out the information below to help us diagnose and fix the issue.
+        Thanks for reporting a bug! Please provide details to help us diagnose and fix the issue.
 
   - type: textarea
     id: description
@@ -23,9 +23,10 @@ body:
       label: Steps to Reproduce
       description: Steps to reproduce the behavior
       placeholder: |
-        1. Load plugin with `claude --plugin-dir .`
-        2. Run command `/chartjs-expert:component navbar`
-        3. See error...
+        1. Load plugin with `claude /install-plugin ...`
+        2. Ask about Chart.js configuration
+        3. Run `/chartjs:component`
+        4. See error...
     validations:
       required: true
 
@@ -34,7 +35,6 @@ body:
     attributes:
       label: Expected Behavior
       description: What you expected to happen
-      placeholder: Describe what should have happened
     validations:
       required: true
 
@@ -43,7 +43,18 @@ body:
     attributes:
       label: Actual Behavior
       description: What actually happened
-      placeholder: Describe what actually happened
+    validations:
+      required: true
+
+  - type: dropdown
+    id: bug-type
+    attributes:
+      label: Bug Type
+      description: Is this a plugin mechanics issue or incorrect Chart.js guidance?
+      options:
+        - Plugin mechanics (skill not triggering, command error, etc.)
+        - Incorrect Chart.js guidance (wrong code, outdated API, etc.)
+        - Both / Not sure
     validations:
       required: true
 
@@ -53,31 +64,50 @@ body:
       label: Affected Component
       description: Which part of the plugin is affected?
       options:
-        - Command (/chartjs-expert:component)
-        - Skill (bootstrap-overview, bootstrap-layout, etc.)
-        - Agent (chartjs-expert)
+        - /chartjs:component command
+        - Skill - chartjs-overview
+        - Skill - chartjs-chart-types
+        - Skill - chartjs-configuration
+        - Skill - chartjs-axes
+        - Skill - chartjs-plugins
+        - Skill - chartjs-developers
+        - Skill - chartjs-integrations
+        - Skill - chartjs-animations
+        - Skill - chartjs-tooltips
+        - Skill - chartjs-advanced
+        - Agent - chartjs-expert
         - Documentation
         - Other
     validations:
       required: true
 
-  - type: input
-    id: component-name
+  - type: dropdown
+    id: framework
     attributes:
-      label: Specific Component Name
-      description: E.g., "/chartjs-expert:component navbar", "bootstrap-layout skill", "chartjs-expert agent"
-      placeholder: "Component name (if applicable)"
+      label: Framework (if applicable)
+      description: Were you using Chart.js with a specific framework?
+      options:
+        - Not applicable
+        - Vanilla JavaScript
+        - React (react-chartjs-2)
+        - Vue (vue-chartjs)
+        - Angular (ng2-charts)
+        - Rails / Stimulus
+        - Next.js
+        - Other
+    validations:
+      required: false
 
   - type: textarea
     id: environment
     attributes:
       label: Environment
-      description: Your environment details (run `gh --version` for GitHub CLI version)
+      description: Your environment details
       placeholder: |
         - OS: macOS 15.0
-        - Claude Code Version: 1.0.0
-        - Plugin Version: 0.1.0
-        - Bootstrap Version: 5.3.8
+        - Claude Code Version: 1.0.37
+        - Chart.js Version: 4.5.1
+      render: yaml
     validations:
       required: true
 
@@ -89,7 +119,14 @@ body:
       render: shell
 
   - type: textarea
+    id: code
+    attributes:
+      label: Relevant Code (if applicable)
+      description: Chart.js configuration or code that triggered the issue
+      render: javascript
+
+  - type: textarea
     id: context
     attributes:
       label: Additional Context
-      description: Add any other context, screenshots, or relevant information
+      description: Screenshots, links to Chart.js docs, or other relevant information

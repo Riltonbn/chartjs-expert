@@ -1,19 +1,33 @@
 name: Feature Request
-description: Suggest a new feature or enhancement for the chartjs-expert plugin
+description: Suggest a new feature or enhancement
 title: "[Feature]: "
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for suggesting a new feature! Please provide as much detail as possible to help us understand your idea.
+        Thanks for suggesting a feature! This could be about plugin mechanics or Chart.js coverage.
+
+  - type: dropdown
+    id: feature-type
+    attributes:
+      label: Feature Type
+      description: Is this about plugin mechanics or Chart.js content?
+      options:
+        - Chart.js coverage (new topics, techniques, examples)
+        - Plugin mechanics (command, skill, agent behavior)
+        - Both / Not sure
+    validations:
+      required: true
 
   - type: textarea
     id: problem
     attributes:
       label: Problem or Need
-      description: Is your feature request related to a problem? Please describe.
-      placeholder: "I'm frustrated when... I need a way to..."
+      description: What problem does this feature solve?
+      placeholder: |
+        Example (coverage): "The plugin doesn't help with Chart.js streaming data..."
+        Example (mechanics): "The /chartjs:component command doesn't support..."
     validations:
       required: true
 
@@ -21,8 +35,7 @@ body:
     id: solution
     attributes:
       label: Proposed Solution
-      description: Describe the solution you'd like
-      placeholder: A clear and concise description of what you want to happen
+      description: Describe what you'd like
     validations:
       required: true
 
@@ -31,11 +44,12 @@ body:
     attributes:
       label: Which component would this affect?
       options:
-        - Command (/chartjs-expert:component)
-        - Skill (bootstrap-overview, bootstrap-layout, etc.)
-        - Agent (chartjs-expert)
+        - /chartjs:component command
+        - Existing skill (specify below)
         - New skill request
-        - New command request
+        - Agent - chartjs-expert
+        - New chart type coverage
+        - New framework integration
         - Documentation
         - Other
     validations:
@@ -45,20 +59,14 @@ body:
     id: component-name
     attributes:
       label: Specific Component (if applicable)
-      description: E.g., "/chartjs-expert:component", "bootstrap-forms skill", "chartjs-expert agent"
-      placeholder: Component name
+      description: Which skill, chart type, or framework?
+      placeholder: "e.g., chartjs-axes skill, bubble charts, Svelte integration"
 
   - type: textarea
     id: alternatives
     attributes:
       label: Alternatives Considered
-      description: Describe any alternative solutions or features you've considered
-
-  - type: textarea
-    id: context
-    attributes:
-      label: Additional Context
-      description: Add any other context, screenshots, or relevant information
+      description: Other solutions you've thought about
 
   - type: dropdown
     id: priority
@@ -76,6 +84,5 @@ body:
     id: contribution
     attributes:
       label: Contribution
-      description: Let us know if you'd like to help implement this feature
       options:
         - label: I'm willing to help implement this feature

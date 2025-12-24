@@ -4,35 +4,54 @@ body:
   - type: markdown
     attributes:
       value: |
-        Have a question about using the plugin? We're here to help!
+        Have a question? This could be about:
+        - **Using the plugin** with Claude Code
+        - **Chart.js topics** the plugin should help with
+        - **Contributing** to the plugin
 
-        **Before asking**: Please check the [README](../../blob/main/README.md) and existing discussions first.
+        **Resources**: [README](../../blob/main/README.md) | [Chart.js Docs](https://www.chartjs.org/docs/latest/)
 
   - type: checkboxes
     id: checklist
     attributes:
       label: Pre-submission checklist
       options:
-        - label: I've checked the README.md
+        - label: I've checked the README
           required: true
-        - label: I've searched existing discussions for similar questions
+        - label: I've searched existing discussions
           required: true
+
+  - type: dropdown
+    id: question-type
+    attributes:
+      label: Question Type
+      description: "What's your question about?"
+      options:
+        - Using the plugin with Claude Code
+        - Chart.js topic the plugin covers
+        - Chart.js topic the plugin should cover
+        - Contributing to the plugin
+        - Other
+    validations:
+      required: true
 
   - type: dropdown
     id: category
     attributes:
-      label: Question Category
-      description: "Select the area most related to your question"
+      label: Category
+      description: "Select the most relevant area"
       options:
-        - Installation and setup
-        - Plugin structure
-        - Skills (creation, triggering)
-        - Agents (creation, AI generation)
-        - Hooks (events, prompt-based)
-        - Commands (slash commands)
-        - MCP integration
-        - Marketplace creation
-        - Troubleshooting
+        - Plugin installation / setup
+        - Skill triggering
+        - /chartjs:component command
+        - Agent behavior
+        - Chart types
+        - Framework integrations
+        - Configuration / options
+        - Axes and scales
+        - Animations
+        - Tooltips and legends
+        - Custom plugins
         - Contributing
         - Other
     validations:
@@ -43,7 +62,6 @@ body:
     attributes:
       label: Your Question
       description: "What would you like to know?"
-      placeholder: "How do I...? Why does...? Can I...?"
     validations:
       required: true
 
@@ -51,46 +69,24 @@ body:
     id: context
     attributes:
       label: Additional Context
-      description: "Any relevant details about your setup or use case"
-      placeholder: "I'm trying to..."
+      description: "Any relevant details, code snippets, or screenshots"
     validations:
       required: false
 
   - type: input
     id: claude-code-version
     attributes:
-      label: Claude Code Version (for troubleshooting)
-      description: "Run `claude --version` to find this"
+      label: Claude Code Version (for plugin issues)
+      description: "Run `claude --version` if this is about plugin behavior"
       placeholder: "e.g., 1.0.37"
     validations:
       required: false
 
-  - type: dropdown
-    id: ide
+  - type: input
+    id: chartjs-version
     attributes:
-      label: IDE / Editor
-      description: "Which editor or environment are you using?"
-      options:
-        - Terminal (CLI only)
-        - VS Code
-        - JetBrains (IntelliJ, WebStorm, etc.)
-        - Vim / Neovim
-        - Cursor
-        - Windsurf
-        - Zed
-        - Other
-    validations:
-      required: false
-
-  - type: dropdown
-    id: os
-    attributes:
-      label: Operating System
-      description: "Select your operating system"
-      options:
-        - macOS
-        - Windows
-        - Linux
-        - Other
+      label: Chart.js Version (for coverage questions)
+      description: "This plugin targets v4.5.1"
+      placeholder: "e.g., 4.5.1"
     validations:
       required: false

@@ -6,12 +6,59 @@ body:
   - type: markdown
     attributes:
       value: |
-        Have a question about using the plugin? We're here to help!
+        Have a question? We're here to help!
 
-        **💡 Consider using [GitHub Discussions](https://github.com/sjnims/chartjs-expert/discussions) instead!**
-        Questions often get faster community responses there, and help others with similar questions find answers.
+        **Consider [GitHub Discussions](https://github.com/sjnims/chartjs-expert/discussions) instead** - questions often get faster community responses there.
 
-        **Before asking**: Please check the [README](https://github.com/sjnims/chartjs-expert/blob/main/README.md) and [CLAUDE.md](https://github.com/sjnims/chartjs-expert/blob/main/CLAUDE.md) first.
+        **Resources**: [README](../../blob/main/README.md) | [Chart.js Docs](https://www.chartjs.org/docs/latest/)
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission checklist
+      options:
+        - label: I've checked the README
+          required: true
+        - label: I've searched existing issues and discussions
+          required: true
+        - label: I've considered posting in GitHub Discussions instead
+          required: true
+
+  - type: dropdown
+    id: question-type
+    attributes:
+      label: Question Type
+      description: What's your question about?
+      options:
+        - Using the plugin with Claude Code
+        - Chart.js topic the plugin covers
+        - Chart.js topic the plugin should cover
+        - Contributing to the plugin
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Select the most relevant area
+      options:
+        - Plugin installation / setup
+        - /chartjs:component command
+        - Skill triggering
+        - Agent behavior
+        - Chart types
+        - Framework integrations
+        - Configuration / options
+        - Axes and scales
+        - Animations
+        - Tooltips and legends
+        - Custom Chart.js plugins
+        - Contributing
+        - Other
+    validations:
+      required: true
 
   - type: textarea
     id: question
@@ -22,49 +69,22 @@ body:
     validations:
       required: true
 
-  - type: dropdown
-    id: category
-    attributes:
-      label: Question Category
-      options:
-        - Installation and setup
-        - Using commands
-        - Skill development
-        - Agent development
-        - Hook development
-        - MCP integration
-        - Marketplace setup
-        - Understanding the workflow
-        - Troubleshooting
-        - Contributing
-        - Other
-    validations:
-      required: true
-
   - type: textarea
     id: tried
     attributes:
       label: What have you tried?
-      description: What steps have you already taken to solve this?
+      description: Steps you've already taken
       placeholder: "I've tried... I looked at..."
 
   - type: textarea
     id: context
     attributes:
       label: Additional Context
-      description: Add any other context, screenshots, or relevant information
-      placeholder: "I'm trying to... My use case is..."
+      description: Code snippets, screenshots, or other relevant information
 
-  - type: checkboxes
-    id: checklist
+  - type: input
+    id: chartjs-version
     attributes:
-      label: Pre-submission checklist
-      options:
-        - label: I've checked the README.md
-          required: true
-        - label: I've searched existing issues and discussions
-          required: true
-        - label: I've considered posting in GitHub Discussions instead
-          required: true
-        - label: This is a question, not a bug report or feature request
-          required: true
+      label: Chart.js Version (if relevant)
+      description: This plugin targets v4.5.1
+      placeholder: "e.g., 4.5.1"

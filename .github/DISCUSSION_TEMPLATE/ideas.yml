@@ -4,9 +4,11 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for sharing your idea! Help us understand what problem you're solving and your proposed solution.
+        Thanks for sharing your idea! This plugin provides Chart.js expertise through Claude Code.
 
-        **Before submitting**: Check [existing ideas](../../discussions/categories/ideas) and review our [contribution guidelines](../../blob/main/CONTRIBUTING.md).
+        Ideas can be about **plugin mechanics** (how skills trigger, command behavior) or **Chart.js coverage** (topics, techniques, frameworks to add).
+
+        **Before submitting**: Check [existing ideas](../../discussions/categories/ideas).
 
   - type: checkboxes
     id: checklist
@@ -15,22 +17,34 @@ body:
       options:
         - label: I've searched existing ideas and discussions
           required: true
-        - label: I've checked the README for related features
-          required: true
+
+  - type: dropdown
+    id: idea-type
+    attributes:
+      label: Idea Type
+      description: "Is this about the plugin itself or the Chart.js content it provides?"
+      options:
+        - Chart.js coverage (new topics, techniques, examples)
+        - Plugin mechanics (skills, commands, agent behavior)
+        - Both / Not sure
+    validations:
+      required: true
 
   - type: dropdown
     id: category
     attributes:
-      label: Idea Category
+      label: Category
       description: "Select the area this idea relates to"
       options:
-        - Plugin structure
-        - Skills
-        - Agents
-        - Hooks
-        - Commands
-        - MCP integration
-        - Marketplace
+        - Chart types coverage
+        - Framework integrations (React, Vue, Angular, Rails)
+        - Configuration and options
+        - Axes and scales
+        - Animations and transitions
+        - Plugin development guidance
+        - /chartjs:component command
+        - Skill triggering or content
+        - Agent behavior
         - Documentation
         - Other
     validations:
@@ -40,8 +54,10 @@ body:
     id: problem
     attributes:
       label: Problem or Need
-      description: "What problem does this idea solve? What need does it address?"
-      placeholder: "I'm frustrated when... I need a way to..."
+      description: "What problem does this idea solve?"
+      placeholder: |
+        Example (coverage): "The plugin doesn't cover time-series axes well..."
+        Example (mechanics): "The agent doesn't trigger when I'm working on..."
     validations:
       required: true
 
@@ -50,7 +66,6 @@ body:
     attributes:
       label: Proposed Idea
       description: "Describe your idea clearly"
-      placeholder: "The plugin should... / It would help if..."
     validations:
       required: true
 
@@ -59,16 +74,6 @@ body:
     attributes:
       label: Expected Benefit
       description: "How would this improve the plugin?"
-      placeholder: "This would help users by..."
-    validations:
-      required: true
-
-  - type: textarea
-    id: alternatives
-    attributes:
-      label: Alternatives Considered
-      description: "Have you thought of other ways to achieve this?"
-      placeholder: "Instead of this, we could also..."
     validations:
       required: false
 
